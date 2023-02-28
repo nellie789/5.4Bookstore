@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    h3 Books
+    a(href='/books/add') Add Book
+    table
+        thead
+            tr
+                th Book Title
+                th Author
+                th Co-Author
+                th Genre
+                th Image Cover
+                th
+        tbody
+            each book in books
+                tr
+                    td= book.title
+                    td= book.author_one
+                    td= book.author_two
+                    td= book.genre
+                    td= book.cover_image
+                    td
+                        a(href=`/books/profile/${book.id}`) View Book

@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+    include ../mixins/bookForm
+    +bookForm(book, author_one,`/books/edit/${book.id}`,`/books/profile/${book.id}`)

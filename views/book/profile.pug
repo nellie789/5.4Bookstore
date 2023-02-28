@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    h3= book.title
+    a(href=`/books/edit/${book.id}`) Edit Book
+    a(href=`/books/delete/${book.id}`) Delete Book
+    div
+        p Author: #{book.author_one}
+        p Co-Author: #{book.author_two}
+        p Publisher: #{book.publisher}
+        p Genre: #{book.genre}
+        p # of Pages: #{book.number_pages}
+        p= book.description
