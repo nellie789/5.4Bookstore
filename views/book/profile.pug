@@ -11,3 +11,20 @@ block content
         p Genre: #{book.genre}
         p # of Pages: #{book.number_pages}
         p= book.description
+    div.authors
+        h4 Author(s)
+        table
+            thead
+                tr
+                    th First
+                    th Last
+                    th Date of Birth
+                    th
+            tbody
+                each author in book.authors
+                    tr
+                        td= author.first_name
+                        td= author.last_name
+                        td= author.date_of_birth
+                        td
+                            a(href=`/authors/profile/${author.id}`) View Author
