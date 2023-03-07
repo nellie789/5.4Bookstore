@@ -13,6 +13,11 @@ block content
         p= book.description
     div.authors
         h4 Author(s)
+        form(action=`/books/${book.id}/enroll/` method='post')
+            select(name='author' id='author' autocomplete=off)
+                each author in availableAuthors
+                    option(value=author.id) #{author.first_name}
+            button.button(type='submit') Enroll
         table
             thead
                 tr
@@ -28,3 +33,4 @@ block content
                         td= author.date_of_birth
                         td
                             a(href=`/authors/profile/${author.id}`) View Author
+                            a(href=`/books/${book.id}/removeAuthor/${author.id}`) Remove Author
