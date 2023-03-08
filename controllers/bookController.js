@@ -40,9 +40,9 @@ module.exports.renderAddForm = function(req, res){
 module.exports.addBook = async function(req, res){
     const book = await Book.create({
         title: req.body.title,
+        publisher: req.body.publisher,
         author_one: req.body.author_one,
         author_two: req.body.author_two,
-        publisher: req.body.publisher,
         genre: req.body.genre,
         number_pages: req.body.number_pages,
         cover_image: req.body.cover_image,

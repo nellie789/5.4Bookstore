@@ -7,12 +7,12 @@ block content
     div
         h3 Name: #{author.first_name} #{author.last_name}
         p Date of Birth: #{author.date_of_birth}
-    h4 Author Books
+    h4 Books
     form(action=`/authors/${author.id}/enroll/` method='post')
         select(name='book' id='book' autocomplete=off)
             each book in availableBooks
                 option(value=book.id) #{book.title}
-        button.button(type='submit') Enroll
+        button.button.primary(type='submit') Enroll
     table
         thead
             tr
